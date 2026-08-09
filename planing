@@ -6,3 +6,5 @@ classes:
 User
 Hotel
 ReservationTicket
+CreditCard
+SecureCreditcard

@@ -82,7 +82,7 @@ if hotel.available():
         if credit_card.authenticate(given_password=password):
             book_date = input("Enter your booking date (demo: 2026-10-15): ")
             hotel.book()
-            reservation_ticket = ReservationTicket(name ,hotel,book_date)
+            reservation_ticket = ReservationTicket(name ,hotel, book_date)
             print(reservation_ticket.generate())
         else:
             print("Credit card authentication failed.")

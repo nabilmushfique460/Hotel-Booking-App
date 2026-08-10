@@ -10,6 +10,7 @@ class Hotel:
         self.hotel_id = hotel_id
         self.name = df.loc[df["id"] == hotel_id, "name"].squeeze()
         self.city = df.loc[df["id"] == hotel_id, "city"].squeeze()
+        self.price = df.loc[df["id"] == hotel_id, "price"].squeeze()
 
     def book(self):
         """Book a hotel by changing its availability to no"""
@@ -39,6 +40,7 @@ class ReservationTicket:
         Hotel name: {self.hotel.name}
         City: {self.hotel.city}
         Booking date: {self.booking_date}
+        Rent fee: {self.hotel.price}
         Pay by card.
         Thank you for your reservation!
         """
@@ -72,10 +74,10 @@ hotel = Hotel(hotel_id)
 if hotel.available():
     name = input("Enter your name: ")
     name = name.title()
-    card_number = input("Enter your card number(demo: 1234567890123456): ")
-    card_expired_date = input("Enter your card expiration date(demo: 12/26): ")
-    card_holder_name = input("Enter your card holder name(demo: JOHN SMITH): ")
-    card_cvc_number = input("Enter your card CVC number(demo: 123): ")
+    card_number = input("Enter your card number(demo:1234567890123456): ")
+    card_expired_date = input("Enter your card expiration date(demo:12/26): ")
+    card_holder_name = input("Enter your card holder name(demo:JOHN SMITH): ")
+    card_cvc_number = input("Enter your card CVC number(demo:123): ")
     credit_card = SecureCreditcard(number=card_number)
     if credit_card.validate(expiration=card_expired_date, holder=card_holder_name, cvc=card_cvc_number):
         password = input("Enter your password(demo: mypass): ")
